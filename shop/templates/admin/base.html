@@ -1,0 +1,19 @@
+
+<!-- {% extends "admin/base_site.html" %} -->
+{% load i18n  eatn_tags static %}
+{% load static %}
+
+{% block title %}{{ title }} | {% trans "Custom Admin Title" %}{% endblock %}
+{% block extrastyle %}
+<link rel="stylesheet" type="text/css" href="{% static 'admin/admin_color.css' %}">
+{% endblock %}
+
+{% block branding %}
+    <h1 id="site-name">{% trans "Custom Admin Title" %}</h1>
+{% endblock %}
+
+<!-- {% block nav-global %}{% endblock %} -->
+
+
+<!--                 <link rel="stylesheet" type="text/css" href="{% static 'admin/admin_color.css' %}">
+ -->

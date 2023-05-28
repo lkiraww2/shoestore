@@ -41,6 +41,10 @@ INSTALLED_APPS = [
     'rest_framework',
     'clearcache',
     'paypal.standard.ipn',
+    'admin_interface',
+    'flat_responsive',
+    'flat', 
+    'colorfield',
 ]
 
 MIDDLEWARE = [
