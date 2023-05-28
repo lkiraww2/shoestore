@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Thank You!</title>
+	<style>
+		body {
+			background-color: #000080;
+			color: #fff;
+		}
+		.container {
+			margin: 50px auto;
+			width: 50%;
+			text-align: center;
+		}
+		.button {
+			background-color: #fff;
+			color: #000080;
+			border: none;
+			padding: 10px 20px;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 16px;
+			margin-top: 20px;
+		}
+		.button:hover {
+			background-color: #000080;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Thank You!</h1>
+		<p>Your payment has been processed successfully.</p>
+		<button class="button" onclick="history.back()" >Back</button>
+	</div>
+    <div class="container">
+		<h1>Payment Page</h1>
+		<form action="{% url 'create_payment_intent' %}" method="POST">
+			{% csrf_token %}
+			<label for="card-element">
+				Credit or debit card
+			</label>
+			<div id="card-element">
+				<!-- عنصر استمارة Stripe -->
+			</div>
+			<!-- عرض أخطاء الاستمارة -->
+			<div id="card-errors" role="alert"></div>
+			<button id="submit">Pay</button>
+            <a href="{% url 'home' %}" class="button">Back to Home</a>
+
+		</form>
+</body>
+<script src="https://js.stripe.com/v3/"></script>
+
+</html>
